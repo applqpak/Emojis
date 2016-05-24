@@ -37,7 +37,7 @@
     public function onEnable()
     {
     
-      $this->getLogger()->info(PREFIX . "Enabled.");
+      $this->getLogger()->info(self::PREFIX . "Enabled.");
     
     }
     
@@ -50,7 +50,7 @@
       
       $player_message = $event->getMessage();
       
-      $new_message = str_replace(array("[:)]", "[:D]", "[:(]", "[-_-]", "[;)]", "[>:(]", "[:3]", "[:S]", "[:+1]", "[:'|]"), array(SMILE, HAPPY, SAD, DISSAPOINTED, WINK, ANGRY, LOVE, CONFUSED, THUMBS_UP, EXHAUSTED), $player_message);
+      $new_message = str_replace(array("[:)]", "[:D]", "[:(]", "[-_-]", "[;)]", "[>:(]", "[:3]", "[:S]", "[:+1]", "[:'|]"), array(self::SMILE, self::HAPPY, self::SAD, self::DISSAPOINTED, self::WINK, self::ANGRY, self::LOVE, self::CONFUSED, self::THUMBS_UP, self::EXHAUSTED), $player_message);
       
       $event->setMessage($new_message);
     
@@ -64,7 +64,7 @@
       
         case "emojis":
         
-          $sender->sendMessage(PREFIX . "To use an emoji in chat, please use [EmojiHere] in your message. E.G: [:)] will produce a smile(😀)");
+          $sender->sendMessage(self::PREFIX . "To use an emoji in chat, please use [EmojiHere] in your message. E.G: [:)] will produce a smile(😀)");
           
           return true;
         
